@@ -2,12 +2,14 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>GASアプリ表示</title>
     <style>
       html, body {
         margin: 0;
         padding: 0;
         height: 100%;
         overflow: auto;
+        background-color: #fff;
       }
 
       #iframe-container {
@@ -22,6 +24,13 @@
         border: none;
         overflow: auto;
       }
+
+      /* PC・スマホ向けに高さ調整（任意） */
+      @media screen and (min-width: 600px) {
+        iframe {
+          height: 90vh;
+        }
+      }
     </style>
   </head>
   <body>
@@ -30,6 +39,7 @@
         id="gasiframe"
         src="about:blank"
         scrolling="yes"
+        tabindex="0"
       ></iframe>
     </div>
 
