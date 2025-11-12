@@ -2,52 +2,20 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>GASアプリ表示</title>
     <style>
-      html, body {
-        margin: 0;
-        padding: 0;
-        height: 100%;
-        overflow: auto;
-        background-color: #fff;
-      }
-
-      #iframe-container {
-        width: 100%;
-        height: 100%;
-        overflow: auto;
-      }
-
-      iframe {
-        width: 100%;
-        height: 100%;
-        border: none;
-        overflow: auto;
-      }
-
-      /* PC・スマホ向けに高さ調整（任意） */
-      @media screen and (min-width: 600px) {
-        iframe {
-          height: 90vh;
-        }
-      }
+      * { margin: 0; padding: 0; overflow: Hidden; height: 100vh; }
+      iframe { border: none; width: 100%; height: 100%; }
     </style>
   </head>
+  <script>
+    window.onload = () => {
+      const gasappurl = 'https://script.google.com/macros/s/AKfycbwTw3u7SWf7Z_zmGeyxOODNTdpRdknDC0cyv3G508EdNxrMFK_WEjpO0HLWRx249Mf4/exec';
+      document.getElementById('gasiframe').src = gasappurl + window.location.search;
+    };
+  </script>
   <body>
-    <div id="iframe-container">
-      <iframe
-        id="gasiframe"
-        src="about:blank"
-        scrolling="yes"
-        tabindex="0"
-      ></iframe>
-    </div>
-
-    <script>
-      window.onload = () => {
-        const gasappurl = 'https://script.google.com/macros/s/AKfycbwTw3u7SWf7Z_zmGeyxOODNTdpRdknDC0cyv3G508EdNxrMFK_WEjpO0HLWRx249Mf4/exec';
-        document.getElementById('gasiframe').src = gasappurl + window.location.search;
-      };
-    </script>
+    <iframe id="gasiframe" src="about:blank"></iframe>
   </body>
 </html>
+メイン リージョン 終了
+STT-survey/index.html at main · konyanyako/STT-survey
