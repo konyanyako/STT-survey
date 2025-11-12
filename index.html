@@ -6,27 +6,32 @@
       html, body {
         margin: 0;
         padding: 0;
-        height: auto;
+        height: 100%;
         overflow: auto;
-        background-color: #fff;
+      }
+
+      #iframe-container {
+        width: 100%;
+        height: 100%;
+        overflow: auto;
       }
 
       iframe {
         width: 100%;
-        height: 400px; /* ガラホ向けに固定値。必要に応じて調整可能 */
+        height: 100%;
         border: none;
-      }
-
-      /* スマホ・PC向けに高さを調整（任意） */
-      @media screen and (min-width: 600px) {
-        iframe {
-          height: 90vh;
-        }
+        overflow: auto;
       }
     </style>
   </head>
   <body>
-    <iframe id="gasiframe" src="about:blank"></iframe>
+    <div id="iframe-container">
+      <iframe
+        id="gasiframe"
+        src="about:blank"
+        scrolling="yes"
+      ></iframe>
+    </div>
 
     <script>
       window.onload = () => {
